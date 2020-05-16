@@ -1,10 +1,12 @@
 # @tanishiking/aho-corasick
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f755fee925ca4cd68710817fca82c556)](https://app.codacy.com/manual/tanishiking/aho-corasick-js?utm_source=github.com&utm_medium=referral&utm_content=tanishiking/aho-corasick-js&utm_campaign=Badge_Grade_Dashboard)
 
 TypeScript implementation of the Aho-Corasick algorithm for efficient string matching
 
 ![CI](https://github.com/tanishiking/aho-corasick-js/workflows/CI/badge.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f755fee925ca4cd68710817fca82c556)](https://app.codacy.com/manual/tanishiking/aho-corasick-js?utm_source=github.com&utm_medium=referral&utm_content=tanishiking/aho-corasick-js&utm_campaign=Badge_Grade_Dashboard)
+[![npm (scoped)](https://img.shields.io/npm/v/@tanishiking/aho-corasick)](https://www.npmjs.com/package/@tanishiking/aho-corasick)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Install
 
