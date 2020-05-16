@@ -1,5 +1,7 @@
 # @tanishiking/aho-corasick
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f755fee925ca4cd68710817fca82c556)](https://app.codacy.com/manual/tanishiking/aho-corasick-js?utm_source=github.com&utm_medium=referral&utm_content=tanishiking/aho-corasick-js&utm_campaign=Badge_Grade_Dashboard)
+
 TypeScript implementation of the Aho-Corasick algorithm for efficient string matching
 
 ![CI](https://github.com/tanishiking/aho-corasick-js/workflows/CI/badge.svg)
