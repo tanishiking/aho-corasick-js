@@ -97,11 +97,10 @@ export class Trie {
       const currentState: State = queue.shift()!
 
       currentState.getTransitions().forEach((transition) => {
+        // This can't be null
         const targetState: State = currentState.nextState(transition)!
-        // TODO: ここで try
         queue.push(targetState)
         let traceFailureState: State = currentState.failure!
-        // TODO traceFailureState の null check
         while (traceFailureState.nextState(transition) === null) {
           traceFailureState = traceFailureState.failure!
         }
