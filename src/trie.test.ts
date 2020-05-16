@@ -266,45 +266,4 @@ describe('Trie', () => {
       })
     })
   })
-
-  // describe('tokenize', () => {
-
-  //   public void tokenizeFullSentence()
-  //   {
-  //       Trie trie = new Trie();
-  //       trie.addKeyword("Alpha");
-  //       trie.addKeyword("Beta");
-  //       trie.addKeyword("Gamma");
-  //       Collection<Token> tokens = trie.tokenize("Hear: Alpha team first, Beta from the rear, Gamma in reserve");
-  //       assertEquals(7, tokens.start());
-  //       Iterator<Token> tokensIt = tokens.iterator();
-  //       assertEquals("Hear: ", tokensIt.next().getFragment());
-  //       assertEquals("Alpha", tokensIt.next().getFragment());
-  //       assertEquals(" team first, ", tokensIt.next().getFragment());
-  //       assertEquals("Beta", tokensIt.next().getFragment());
-  //       assertEquals(" from the rear, ", tokensIt.next().getFragment());
-  //       assertEquals("Gamma", tokensIt.next().getFragment());
-  //       assertEquals(" in reserve", tokensIt.next().getFragment());
-  //   }
-  // })
-
-  // @Test
-  // public void tokenizeTokensInSequence()
-  // {
-  //     Trie trie = new Trie();
-  //     trie.addKeyword("Alpha");
-  //     trie.addKeyword("Beta");
-  //     trie.addKeyword("Gamma");
-  //     Collection<Token> tokens = trie.tokenize("Alpha Beta Gamma");
-  //     assertEquals(5, tokens.start());
-  // }
-
-  //   // Test offered by XCurry, https://github.com/robert-bor/aho-corasick/issues/7
-  //   @Test
-  //   public void zeroLengthTestBug7InGithubReportedByXCurry()
-  //   {
-  //       Trie trie = new Trie().removeOverlaps().onlyWholeWords().caseInsensitive();
-  //       trie.addKeyword("");
-  //       trie.tokenize("Try a natural lip and subtle bronzer to keep all the focus on those big bright eyes with NARS Eyeshadow Duo in Rated R And the winner is... Boots No7 Advanced Renewal Anti-ageing Glycolic Peel Kit ($25 amazon.com) won most-appealing peel.");
-  //   }
 })

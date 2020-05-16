@@ -1,14 +1,34 @@
 {
-  "name": "aho-corasick",
+  "name": "@tanishiking/aho-corasick",
   "version": "0.0.1",
-  "description": "",
-  "main": "build/index.js",
+  "homepage": "https://github.com/tanishiking/aho-corasick-js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanishiking/aho-corasick-js"
+  },
+  "main": "dist/trie.js",
+  "types": "dist/trie.d.ts",
+  "description": "TypeScript implementation of the Aho-Corasick algorithm for efficient string matching",
+  "keywords": [
+    "aho-corasick",
+    "trie",
+    "string",
+    "search",
+    "match"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc --project .",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "yarn run build"
   },
-  "author": "",
-  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "author": "Rikito Taniguchi <rikiriki1238@gmail.com> (https://github.com/tanishiking/)",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
@@ -22,8 +42,5 @@
     "jest": "^26.0.1",
     "ts-jest": "^26.0.0",
     "typescript": "^3.9.2"
-  },
-  "dependencies": {
-    "ts-graphviz": "^0.11.0"
   }
 }

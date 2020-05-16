@@ -37,6 +37,11 @@ export class Trie {
     currentState.addEmits([keyword])
   }
 
+  /**
+   * Find keywords from given text.
+   *
+   * @param text - The text to search for keywords.
+   */
   parseText(text: string): Emit[] {
     this.checkForConstructedFailureStates()
     let pos = 0
@@ -131,3 +136,5 @@ export class Trie {
     })
   }
 }
+
+export { TrieConfig, defaultConfig, Emit }
