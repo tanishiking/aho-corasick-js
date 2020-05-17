@@ -1,16 +1,3 @@
-/**
- * Convert string to character array
- *
- * @param str - string to split.
- */
-export function stringToArray(str: string): string[] {
-  const arr = []
-  for (let i = 0; i < str.length; i++) {
-    arr.push(str.substr(i, 1))
-  }
-  return arr
-}
-
 export function isAlphaNumeric(str: string): boolean {
   const len = str.length
   for (let i = 0; i < len; i++) {

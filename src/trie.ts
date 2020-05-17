@@ -1,7 +1,7 @@
 import { TrieConfig, defaultConfig } from './trie-config'
 import { State } from './state'
 import { Emit } from './emit'
-import { stringToArray, isAlphaNumeric } from './utils'
+import { isAlphaNumeric } from './utils'
 import { IntervalTree } from './interval/interval-tree'
 
 /**
@@ -29,11 +29,13 @@ export class Trie {
   }
 
   addKeyword(keyword: string): void {
-    if (keyword.length === 0) return
+    const length = keyword.length
+    if (length === 0) return
     let currentState = this.rootState
-    stringToArray(keyword).forEach((char) => {
+    for (let i = 0; i < length; i++) {
+      const char = keyword.charAt(i)
       currentState = currentState.addState(char)
-    })
+    }
     currentState.addEmits([keyword])
   }
 
@@ -44,17 +46,18 @@ export class Trie {
    */
   parseText(text: string): Emit[] {
     this.checkForConstructedFailureStates()
-    let pos = 0
     let currentState: State = this.rootState
     const collectedEmits: Emit[] = []
 
-    stringToArray(text).forEach((originalChar) => {
+    const length = text.length
+
+    for (let pos = 0; pos <= length; pos++) {
+      const originalChar = text.charAt(pos)
       const char = this.options.caseInsensitive ? originalChar.toLowerCase() : originalChar
       currentState = this.getState(currentState, char)
       const emits = this.toEmits(pos, currentState)
       collectedEmits.push(...emits)
-      pos++
-    })
+    }
 
     // Filter out partial words.
     const emits = this.options.onlyWholeWords ? this.removePartialMatches(text, collectedEmits) : collectedEmits
@@ -132,7 +135,7 @@ export class Trie {
   private toEmits(end: number, currentState: State): Emit[] {
     const emits: string[] = currentState.emits
     return emits.map((emit) => {
-      return new Emit(end - stringToArray(emit).length + 1, end, emit)
+      return new Emit(end - emit.length + 1, end, emit)
     })
   }
 }
