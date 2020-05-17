@@ -14,6 +14,9 @@ TypeScript implementation of the Aho-Corasick algorithm for efficient string mat
 yarn add @tanishiking/aho-corasick
 ```
 
+## Benchmark
+See https://github.com/tanishiking/aho-corasick-benchmark
+
 ## Usage
 
 ```typescript
