@@ -46,10 +46,10 @@ export class State {
    */
   nextState(char: string, ignoreRootState: boolean = false): State | null {
     const nextState: State | undefined = this.success.get(char)
-    if (!ignoreRootState && typeof nextState === 'undefined' && this.rootState !== null) {
-      return this.rootState
-    } else if (nextState) {
+    if (nextState) {
       return nextState
+    } else if (!ignoreRootState && typeof nextState === 'undefined' && this.rootState !== null) {
+      return this.rootState
     } else {
       return null
     }

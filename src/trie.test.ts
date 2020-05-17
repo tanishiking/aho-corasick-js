@@ -1,6 +1,27 @@
 import { Trie } from './trie'
 
 describe('Trie', () => {
+  describe('addKeyword', () => {
+    test('keyword and text are the same', () => {
+      const trie = new Trie()
+      trie.addKeyword('abc')
+      const emits = trie.parseText('abc')
+      expect(emits).toHaveLength(1)
+      expect(emits[0]).toEqual({
+        end: 2,
+        start: 0,
+        keyword: 'abc',
+      })
+    })
+
+    test('empty string', () => {
+      const trie = new Trie()
+      trie.addKeyword('')
+      const emits = trie.parseText('abc')
+      expect(emits).toHaveLength(0)
+    })
+  })
+
   describe('parseText', () => {
     test('keyword and text are the same', () => {
       const trie = new Trie(['abc'])
@@ -11,6 +32,13 @@ describe('Trie', () => {
         start: 0,
         keyword: 'abc',
       })
+    })
+
+    test('Run parseText multiple times', () => {
+      const trie = new Trie(['abc'])
+      expect(trie.parseText('abc')).toHaveLength(1)
+      expect(trie.parseText('abc')).toHaveLength(1)
+      expect(trie.parseText('abcde')).toHaveLength(1)
     })
 
     test('test is longer than keyword', () => {
